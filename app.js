@@ -84,7 +84,7 @@ intervalId = setInterval(nextImage, 4000);
 
 
 const cards = document.querySelectorAll('.card'); // Select all card elements
-const maxTilt = 10; // Adjust this value for different tilt intensity
+const maxTilt = 7; // Adjust this value for different tilt intensity
 
 document.addEventListener('mousemove', (e) => {
     const mouseX = e.clientX;
