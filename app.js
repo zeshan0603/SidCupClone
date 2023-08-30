@@ -33,6 +33,36 @@ document.addEventListener("mousemove", function(dets) {
     }, 200);
 });
 
+// image carousel
+const images = document.querySelectorAll('.carousel-img');
+const dots = document.querySelectorAll('.dot');
+let currentImageIndex = 0;
+let intervalId;
+
+function showImage(index) {
+    images.forEach(image => image.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+
+    images[index].classList.add('active');
+    dots[index].classList.add('active');
+    currentImageIndex = index;
+}
+
+function changeImage(index) {
+    clearInterval(intervalId);
+    showImage(index);
+    intervalId = setInterval(nextImage, 4000);
+}
+
+function nextImage() {
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+    showImage(currentImageIndex);
+}
+
+// Initialize the first image and dot as active
+showImage(currentImageIndex);
+
+intervalId = setInterval(nextImage, 4000);
 
 
 // const h5All = document.querySelectorAll("#nav h5");
