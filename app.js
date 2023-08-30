@@ -54,7 +54,7 @@ document.addEventListener("mousemove", function(dets) {
 
 
 const cards = document.querySelectorAll('.card'); // Select all card elements
-const maxTilt = 15; // Adjust this value for different tilt intensity
+const maxTilt = 10; // Adjust this value for different tilt intensity
 
 document.addEventListener('mousemove', (e) => {
     const mouseX = e.clientX;
