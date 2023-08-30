@@ -407,22 +407,66 @@ video {
     align-items: center;
     justify-content: space-between;
     position: relative;
-    gap: 80px;
+    gap: 50px;
     z-index: 15;
     margin-top: 50px;
     padding: 0 8%;
 }
 
 
-
-
-
-#food-drink-img {
+/* IMAGE CAROUSEL */
+#image-carousel {
+    position: relative;
+    width: 600px;
+    height: 380px;
     border-radius: 15px;
+    overflow: hidden;
+    /* Ensure images stay within the container */
+}
+
+
+.carousel-img {
+
     width: 540px;
     height: 340px;
     object-fit: cover;
     /* z-index: 10; */
+    object-fit: cover;
+    position: absolute;
+    opacity: 0;
+    border-radius: 15px;
+    transition: opacity 0.5s ease-in-out;
+}
+
+
+
+
+
+.active {
+    opacity: 1;
+}
+
+#dots-container {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 10px;
+    left: 45%;
+    transform: translateX(-50%);
+    width: 100%;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #96C11E;
 }
 
 #dot-image-2 {
@@ -442,6 +486,7 @@ video {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    flex: 1;
 
 }
 
@@ -472,6 +517,7 @@ video {
 .btn:hover {
     background-color: #96C11E;
     color: black;
+    border: 1.5px solid black;
 }
 
 #swiper {
